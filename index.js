@@ -25,6 +25,8 @@ const app = express();
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({schema, context: {Author}}));
 
-app.use('/graphiql', graphqlExpress({endpointURL: '/graphql'}))
+
+app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+
                                                                                                                                                                                                                                                                                                   
 app.listen(PORT)
